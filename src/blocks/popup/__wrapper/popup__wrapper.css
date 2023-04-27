@@ -1,0 +1,7 @@
+.popup__wrapper{
+    position: relative;
+}
+
+.popup__wrapper:hover .popup__close-button{
+    opacity: 1;
+}

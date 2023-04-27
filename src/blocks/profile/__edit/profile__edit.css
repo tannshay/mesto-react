@@ -1,0 +1,28 @@
+.profile__edit{
+    margin: 0 0 0 18px;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    background-image: url(../../../images/edit.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile__edit:hover{
+    opacity: .6;
+    cursor: pointer;
+}
+
+@media (max-width: 900px){
+    .profile__edit{
+        width: 18px;
+        height: 18px;
+        margin: 24px 0 0 10px;
+        background-image: url(../../../images/editSmall.svg);
+    }
+}

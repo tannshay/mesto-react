@@ -1,0 +1,6 @@
+.mesto__rectangle{
+    display: flex;
+    margin: 21px 20px 25px 22px;
+    justify-content: space-between;
+    align-items: center;
+}

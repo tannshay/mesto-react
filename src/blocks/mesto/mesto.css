@@ -1,0 +1,26 @@
+.mesto{
+    padding-top: 50px;
+    max-width: 880px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 282px);
+    grid-template-rows: repeat(2, 361px);
+    gap: 20px 17px;
+}
+
+@media (max-width: 900px){
+    .mesto{
+        grid-template-columns: repeat(2, 282px);
+        grid-template-rows: repeat(3, 361px);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px){
+    .mesto{
+        grid-template-columns: 282px;
+        grid-template-rows: repeat(6, 361px);
+        padding-top: 36px;
+        gap: 20px;
+    }
+}

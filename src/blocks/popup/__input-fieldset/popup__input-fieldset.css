@@ -1,0 +1,8 @@
+.popup__input-fieldset{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 358px;
+    min-height: 57px;
+    position: relative;
+}

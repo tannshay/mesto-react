@@ -1,0 +1,9 @@
+.popup_opened{
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup_opened:hover .popup__close-button{
+    opacity: .6;
+}
