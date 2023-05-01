@@ -10,24 +10,32 @@ function App() {
         setIsEditProfilePopupOpen(false)
         setIsAddPlacePopupOpen(false)
         setIsEditAvatarPopupOpen(false)
+        setIsImagePopupOpen(false)
+        setSelectedCard({})
     }
-    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false)
     function handleEditProfileClick(){
         setIsEditProfilePopupOpen(true)
     }
-    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false)
     function handleAddPlaceClick(){
         setIsAddPlacePopupOpen(true)
     }
-    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
+    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false)
     function handleEditAvatarClick(){
         setIsEditAvatarPopupOpen(true)
+    }
+    const [isImagePopupOpen,setIsImagePopupOpen] = useState(false)
+    const [selectedCard, setSelectedCard] = useState({})
+    function handleCardClick(card){
+      setSelectedCard(card)
+      setIsImagePopupOpen(true)
     }
   return (
     <div className="App">
       <div className="page">
         <Header />
-        <Main onEditProfileClick={handleEditProfileClick} onEditAvatarClick={handleEditAvatarClick} onAddPlaceClick={handleAddPlaceClick}/>
+        <Main onCardClick={handleCardClick} onEditProfileClick={handleEditProfileClick} onEditAvatarClick={handleEditAvatarClick} onAddPlaceClick={handleAddPlaceClick}/>
         <Footer />
         <PopupWithForm onClose={closeAllPopups} name="edit_profile" title="Редактировать профиль" isOpen={isEditProfilePopupOpen}>
           <fieldset className="popup__input-fieldset">
@@ -92,21 +100,8 @@ function App() {
             <span className="popup__input-error"></span>
           </fieldset>
         </PopupWithForm>
-        <PopupWithImage />
+        <PopupWithImage isOpen={isImagePopupOpen} onClose={closeAllPopups} card={selectedCard}/>
       </div>
-      <template className="mesto__element-template">
-        <article className="mesto__element">
-          <img className="mesto__img" />
-          <button type="button" className="mesto__delete"></button>
-          <div className="mesto__rectangle">
-            <h2 className="mesto__name"></h2>
-            <div className="mesto__like">
-              <button type="button" className="mesto__like_type_heart"></button>
-              <div className="mesto__like_type_counter"></div>
-            </div>
-          </div>
-        </article>
-      </template>
     </div>
   );
 }
