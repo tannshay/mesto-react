@@ -35,9 +35,8 @@ function Main({onCardClick, onEditProfileClick, onEditAvatarClick, onAddPlaceCli
               src={userAvatar}
               alt="аватар"
               className="profile__avatar"
-              onClick={onEditAvatarClick}
             />
-            <div className="profile__change-icon"></div>
+            <div className="profile__change-icon" onClick={onEditAvatarClick}></div>
             <div className="profile__info">
               <div className="profile__author">
                 <h1 className="profile__name">{userName}</h1>

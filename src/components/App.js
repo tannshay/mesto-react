@@ -37,12 +37,11 @@ function App() {
         <Header />
         <Main onCardClick={handleCardClick} onEditProfileClick={handleEditProfileClick} onEditAvatarClick={handleEditAvatarClick} onAddPlaceClick={handleAddPlaceClick}/>
         <Footer />
-        <PopupWithForm onClose={closeAllPopups} name="edit_profile" title="Редактировать профиль" isOpen={isEditProfilePopupOpen}>
+        <PopupWithForm buttonText='Сохранить' onClose={closeAllPopups} name="edit_profile" title="Редактировать профиль" isOpen={isEditProfilePopupOpen}>
           <fieldset className="popup__input-fieldset">
             <input
               className="popup__text popup__text_type_name"
               name="name"
-              value="Жак-Ив Кусто"
               minLength="2"
               maxLength="40"
               placeholder="Имя"
@@ -54,7 +53,6 @@ function App() {
             <input
               className="popup__text popup__text_type_about"
               name="about"
-              value="Исследователь океана"
               minLength="2"
               maxLength="200"
               placeholder="О себе"
@@ -63,7 +61,7 @@ function App() {
             <span className="popup__input-error"></span>
           </fieldset>
         </PopupWithForm>
-        <PopupWithForm onClose={closeAllPopups} name="add-card" title="Новое место" isOpen={isAddPlacePopupOpen}>
+        <PopupWithForm buttonText='Добавить' onClose={closeAllPopups} name="add-card" title="Новое место" isOpen={isAddPlacePopupOpen}>
           <fieldset className="popup__input-fieldset">
             <input
               className="popup__text popup__text_type_name"
@@ -87,8 +85,8 @@ function App() {
             <span className="popup__input-error"></span>
           </fieldset>
         </PopupWithForm>
-        <PopupWithForm onClose={closeAllPopups} name="delete" title="Вы уверены?"></PopupWithForm>
-        <PopupWithForm name="change-avatar" title="Обновить аватар" isOpen={isEditAvatarPopupOpen}>
+        <PopupWithForm buttonText='Да' onClose={closeAllPopups} name="delete" title="Вы уверены?"></PopupWithForm>
+        <PopupWithForm buttonText='Сохранить' name="change-avatar" title="Обновить аватар" isOpen={isEditAvatarPopupOpen}>
           <fieldset className="popup__input-fieldset">
             <input
               className="popup__text popup__text_type_about"
