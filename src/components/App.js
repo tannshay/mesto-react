@@ -2,7 +2,7 @@ import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
-import PopupWithImage from "./PopupWithImage";
+import ImagePopup from "./ImagePopup";
 import { useState } from "react";
 
 function App() {
@@ -100,7 +100,7 @@ function App() {
             <span className="popup__input-error"></span>
           </fieldset>
         </PopupWithForm>
-        <PopupWithImage isOpen={isImagePopupOpen} onClose={closeAllPopups} card={selectedCard}/>
+        <ImagePopup isOpen={isImagePopupOpen} onClose={closeAllPopups} card={selectedCard}/>
       </div>
     </div>
   );

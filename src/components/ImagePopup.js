@@ -1,4 +1,4 @@
-function PopupWithImage({card,onClose,isOpen}){
+function ImagePopup({card,onClose,isOpen}){
     return(
         <section className={`popup popup_type_photo ${isOpen ? 'popup_opened' : ''}`}>
         <div className="popup__wrapper">
@@ -14,4 +14,4 @@ function PopupWithImage({card,onClose,isOpen}){
     )
 }
 
-export default PopupWithImage;
+export default ImagePopup;
