@@ -1,5 +1,3 @@
-import { Children } from "react";
-
 function PopupWithForm({onSubmit, name, title, children, isOpen, onClose, buttonText}){
     return (
       <section className={`popup popup_type_${name} ${isOpen ? 'popup_opened' : ''}`}>

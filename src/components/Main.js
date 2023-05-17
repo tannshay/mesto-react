@@ -6,11 +6,8 @@ function Main({cards, onCardDelete, onCardLike,onCardClick, onEditProfileClick, 
     const currentUser = useContext(CurrentUserContext)
 
     const cardElements = cards.map((card) => {
-        return(<Card onCardDelete={onCardDelete} onCardLike={onCardLike} onCardClick={onCardClick} link={card.link} card={card} key={card._id} name={card.name} likes={card.likes}/>)
+        return(<Card onCardDelete={onCardDelete} onCardLike={onCardLike} onCardClick={onCardClick} card={card} key={card._id}/>)
       })
-    function RenderCards(){
-        return cardElements
-    }
     return (
       <main className="content">
         <section className="profile">
@@ -40,7 +37,7 @@ function Main({cards, onCardDelete, onCardLike,onCardClick, onEditProfileClick, 
           ></button>
         </section>
         <section className="mesto">
-          <RenderCards/>
+          {cardElements}
         </section>
       </main>
     );
