@@ -4,6 +4,23 @@ class Api {
     this._headers = options.headers;
   }
 
+  changeLikeCardStatus(cardId, notLiked,userId){
+    if (notLiked){
+      return fetch(`${this._url}/cards/${cardId}/likes`, {
+        method: "PUT",
+        headers: this._headers,
+        body: JSON.stringify({
+          _id: userId,
+        }),
+      }).then(this._checkResponse)
+    } else {
+      return fetch(`${this._url}/cards/${cardId}/likes`, {
+        method: "DELETE",
+        headers: this._headers,
+      }).then(this._checkResponse)
+    }
+  }
+
   _checkResponse(res) {
     if (res.ok) {
       return res.json();
@@ -52,29 +69,12 @@ class Api {
     }).then(this._checkResponse);
   }
 
-  deleteLike(cardId) {
-    return fetch(`${this._url}/cards/${cardId}/likes`, {
-      method: "DELETE",
-      headers: this._headers,
-    }).then(this._checkResponse);
-  }
-
-  putLike(cardId, userId) {
-    return fetch(`${this._url}/cards/${cardId}/likes`, {
-      method: "PUT",
-      headers: this._headers,
-      body: JSON.stringify({
-        _id: userId,
-      }),
-    }).then(this._checkResponse);
-  }
-
-  changeAvatar(avaLink) {
+  changeAvatar({avaLink}) {
     return fetch(`${this._url}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
-        avatar: avaLink.avaLink,
+        avatar: avaLink,
       }),
     }).then(this._checkResponse);
   }
