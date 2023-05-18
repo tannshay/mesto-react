@@ -18,9 +18,11 @@ function App() {
     const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false)
     const [isImagePopupOpen,setIsImagePopupOpen] = useState(false)
     const [selectedCard, setSelectedCard] = useState({})
-    useEffect(()=>{Promise.all([api.getInitialCards(),api.getUserInfo()]).then((res)=>{
-      setCards(res[0])
-      setCurrentUser(res[1])
+    useEffect(()=>{
+      Promise.all([api.getInitialCards(),api.getUserInfo()])
+      .then(([cards,userInfo])=>{
+      setCards(cards)
+      setCurrentUser(userInfo)
     }).catch((err) => {
       console.log(err)
     })},[])
